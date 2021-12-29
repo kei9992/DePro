@@ -1,0 +1,1002 @@
+@import url('https://fonts.googleapis.com/css?family=Sawarabi+Mincho');
+body{
+    max-width: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Sawarabi Mincho', sans-serif;
+}
+
+.top-op,.top-op2{
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+  }
+  .top-op{
+    z-index: 99;
+    background: #f2f2f2;
+    animation-duration: 1.2s;
+    animation-delay:1.4s;
+    animation-fill-mode: forwards;
+    animation-name: top-op;
+  }
+  .top-op2{
+    z-index: 100;
+    background: #e2e2e2;
+    animation-duration: 0.7s;
+    animation-delay: 0.6s;
+    animation-fill-mode: forwards;
+    animation-name: top-op2;
+  }
+   
+  @keyframes top-op{
+  0% {
+    width: 100%;
+    left:0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+    left: 100%;
+  }
+  }
+  @keyframes top-op2{
+  0% {
+    width: 100%;
+    left:0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+    left: 100%;
+  }
+  }
+
+/* MENU-------------------------------------------- */
+.sidemenu{
+    background-color: rgb(8, 8, 8);
+    position: fixed;
+    width: 10%;
+    height: 600px;
+    right: 0;
+    display: flex;
+    z-index: 50;
+    border-left: 1px solid #ffffff;
+    
+}
+
+.menu-btn {
+    position: fixed;
+    top: 40%;
+    right: 2.5%;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    background-color: #000000;
+    border: 1px solid white;
+    border-radius: 5em;
+
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    position: absolute;
+    transition-duration:1s;
+}
+.menu-btn span:before {
+    bottom: 8px;
+    transition-duration:0.5s;
+}
+.menu-btn span:after {
+    top: 8px;
+    transition-duration:0.5s;
+}
+
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+    transition-duration:0.5s;
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+    transition-duration:0.5s;
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+    transition-duration:0.5s;
+}
+
+#menu-btn-check {
+    display: none;
+}
+
+.menu-content ul {
+    padding: 70px 10px 0;
+}
+.menu-content ul li {
+    border-bottom: solid 1px #ffffff;
+    list-style: none;
+}
+.menu-content ul li a {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    box-sizing: border-box;
+    color:#ffffff;
+    text-decoration: none;
+    padding: 9px 15px 10px 0;
+    position: relative;
+}
+.menu-content ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px #ffffff;
+    border-right: solid 2px #ffffff;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 11px;
+    top: 16px;
+}
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;/*leftの値を変更してメニューを画面外へ*/
+    z-index: 999;
+    background-color: #000000;
+    transition: all 0.5s;/*アニメーション設定*/
+    opacity: 70%;
+}
+
+#menu-btn-check:checked ~ .menu-content {
+    left: 0;/*メニューを画面内へ*/
+}
+#menu-btn-check:checked ~ .menu-content {
+    left: 0;/*メニューを画面内へ*/
+}
+
+/* CONTENT--------------------------------------------- */
+.maincontent{
+    background-color: bisque;
+    position: relative;
+    width: 90%;
+    height: 2600px;
+}
+
+.content1-1{
+    background-color: rgb(0, 0, 0); 
+    height: 600px;
+    width: 100%;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+}
+.content1{
+    
+    height: 600px;
+    width: 100%;
+    position: relative
+}
+
+
+
+.man {
+    position: relative;
+    z-index: 29;
+    right: -120px;
+    overflow-x: hidden;
+}
+
+.tabako1 {
+    width: 14%;
+    height: 50%;
+    position: absolute;
+    display: inline-block;
+    top: 20%;
+    right: 40%;
+    
+    transform: rotate(20deg);
+    z-index: 200;
+    
+   
+}
+.tabako {
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    display: inline-block;
+    z-index: 31;
+    transform: rotate(20deg);
+    border-radius: 0.5em;
+    opacity: 50%;
+    box-shadow: 13px 13px 16px 12px rgb(24, 24, 24),
+    13px 13px 18px rgba(255,255,255,0.8) inset;
+    width: 100%;
+    
+}
+
+
+.wave{
+position:absolute;
+height:200px;/*何も表示されない場合は各波の親要素に高さを持たせましょう。*/
+
+
+}
+canvas{
+position: absolute;
+top: 50%;
+left:0;
+width: 100%;
+z-index: 40;
+}
+
+.content1 h1{
+    display: inline-block;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 50;
+    color: #ffffff;
+    font-family: "ヒラギノ明朝 Pro W3","Hiragino Mincho Pro","MS p明朝","MS PMincho",serif;
+    opacity:80%;
+    font-size: 40px;
+    text-shadow: 1px 2px 3px #ccc6c6;
+} 
+
+.scrolldown4{
+    /*描画位置※位置は適宜調整してください*/
+  position:absolute;
+  bottom:18px;
+  right:12%;
+    /*矢印の動き1秒かけて永遠にループ*/
+  animation: arrowmove 1s ease-in-out infinite;
+  z-index: 2000;
+}
+
+/*下からの距離が変化して全体が下→上→下に動く*/
+@keyframes arrowmove{
+      0%{bottom:1%;}
+      50%{bottom:3%;}
+     100%{bottom:1%;}
+ }
+
+/*Scrollテキストの描写*/
+.scrolldown4 span{
+    /*描画位置*/
+  position: absolute;
+  left:-20px;
+  bottom:18px;
+    /*テキストの形状*/
+  color: #eee;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  /*縦書き設定*/
+  -ms-writing-mode: tb-rl;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+}
+
+/* 矢印の描写 */
+.scrolldown4:before {
+    content: "";
+    /*描画位置*/
+    position: absolute;
+    bottom: 18px;
+    right: -6px;
+    /*矢印の形状*/
+    width: 1px;
+    height: 20px;
+    background: #eee;
+    transform: skewX(-31deg);
+}
+
+.scrolldown4:after{
+  content:"";
+    /*描画位置*/
+  position: absolute;
+  bottom:18px;
+  right:0;
+    /*矢印の形状*/
+  width:1px;
+  height: 50px;
+  background:#eee;
+}
+
+/* content2----------------------------------------------- */
+
+.content2{
+    background-color: rgba(235, 235, 235, 0.952);
+    height: 600px;
+    width: 100%;
+    position: relative;
+    z-index:10;
+}
+
+.box{
+    position: relative;
+    
+    width: 50%;
+    height: 50%;
+    top: 20%;
+    left: 110px;
+    
+}
+.intoroduce1{
+    background-color: aliceblue;
+    display: inline-block;
+    position: absolute;
+    height: 140%;
+    width: 150%;
+    transition: 1s;
+    z-index: 30;
+    background-image: url(pic/about1.jpg);
+    background-size: cover;
+    box-shadow:2px 2px 4px -2px gray inset;
+    filter:grayscale(0%);
+}
+.intoroduce2{
+    background-color: rgb(21, 22, 22);
+    display: inline-block;
+    position: absolute;
+    height: 140%;
+    width: 150%;
+    top: -10px;
+    left: -80px;
+    transition: 1s;
+    background-image: url(pic/about2.jpg);
+    filter:grayscale(100%);
+    box-shadow: 2px 2px 4px -2px gray inset;
+    
+}
+
+.box:hover .intoroduce2{
+    z-index: 32;
+    top:0;
+    left: 0;
+    transition: 1s;
+    transform: translate3d(10px, 10px, 0);
+    filter:grayscale(0%);
+}
+
+.box:hover .intoroduce1{
+    
+    top: -10px;
+    left: -80px;
+    transition: 1s;
+    transform: translate3d(10px, 10px, 0);
+    filter:grayscale(100%);
+}
+
+.about{
+    position: absolute;
+    right: 10%;
+    top: 40%;
+    display: inline-block;
+}
+
+.content3 .about{
+    right: 7%;
+}
+.content4 .about{
+    right: 14%;
+}
+
+
+.arrow1{
+    position: absolute;
+    bottom: 10px;
+    right: 2%;
+    display: inline-block;
+}
+.arrow{
+    position: relative;
+    display: inline-block;
+    padding: 0 0 0 16px;
+    color: #000;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 25px;
+    padding-bottom: 3px;
+}
+
+.arrow::before,
+.arrow::after{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    content: "";
+    vertical-align: middle;
+}
+.sample5-1::before{
+    left: -13px;
+    width: 15px;
+    height: 15px;
+    border-top: 3px solid rgb(0, 0, 0);
+    border-right: 3px solid rgb(0, 0, 0);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transition: all;
+    
+}
+
+.btnripple3{
+    /*波紋の基点とするためrelativeを指定*/
+	position: relative;
+    /*リンクの形状*/
+	display:inline-block;
+    text-decoration: none;
+    color: #333;
+    outline: none;
+}
+
+/*波形の設定*/
+.btnripple3:hover::before {
+    content: '';
+    /*絶対配置で波形の位置を決める*/
+    position: absolute;
+    left:30%;
+    top:0;
+    /*波形の形状*/
+    border: 1px solid #333;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    /*はじめは不透明*/
+	opacity:1;
+    /*アニメーションの設定*/
+    animation:1s circleanime2 forwards;
+}
+
+/*波形が広がるアニメーション*/
+@keyframes circleanime2{
+	0%{
+	  transform: scale(0);
+	}
+	100%{
+		transform:scale(2);
+		opacity: 0;
+	}
+}
+
+
+
+/* content3------------------------------------------------ */
+.content3{
+    background-color: rgba(20, 20, 20, 0.938);
+    height: 600px;
+    width: 100%;
+    position: relative;
+    margin-top: 100px;
+}
+
+.content3 h2 {
+    color: #ffffff;
+}
+.content3 p {
+    color: #ffffff;
+}
+.content3 a{
+    color: #ffffff;
+}
+.content3 .btnripple3:hover::before {
+    content: '';
+    /*絶対配置で波形の位置を決める*/
+    position: absolute;
+    left:30%;
+    top:0;
+    /*波形の形状*/
+    border: 1px solid rgb(253, 253, 253);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    /*はじめは不透明*/
+	opacity:1;
+    /*アニメーションの設定*/
+    animation:1s circleanime2 forwards;
+}
+.content3 .btnripple3{
+    /*波紋の基点とするためrelativeを指定*/
+	position: relative;
+    /*リンクの形状*/
+	display:inline-block;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    outline: none;
+}
+.content3 .sample5-1::before{
+    left: -13px;
+    width: 15px;
+    height: 15px;
+    border-top: 3px solid rgb(255, 255, 255);
+    border-right: 3px solid rgb(255, 255, 255);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transition: all;
+    
+}
+
+
+
+
+
+
+
+.picture{
+    position: absolute;
+    /* background-color: rgb(0, 0, 0); */
+    display: inline-block;
+    width: 53%;
+    height: 100%;
+    padding: 3px;
+}
+
+.human1{
+    float: right;
+    position: relative;
+    width: 33%;
+    height: 100%;
+    background-color: aqua;
+    margin-right: 2px;
+    background-image: url(pic/human1.jpg);
+    background-position: center;
+    background-size: cover;
+    
+}
+.human2{
+    float: right;
+    position: relative;
+    width: 32%;
+    height: 100%;
+    background-color: rgb(125, 177, 177);
+    margin-right: 1px;
+    margin-left: 1px;
+    background-image: url(pic/human2.jpg);
+    background-size: cover;
+}
+.human3{
+    position: relative;
+    float: right;
+    width: 32%;
+    height: 100%;
+    background-color: rgb(168, 83, 97);
+    margin-left: 2px;
+    background-image: url(pic/human3.jpg);
+    background-position-y: -25px;
+    background-position: center;
+}
+
+.content4{
+    background-color: rgba(235, 235, 235, 0.952);
+    height: 600px;
+    width: 100%;
+    position: relative;
+    margin-top: 100px;
+    
+}
+
+.produce1{
+    position:relative;
+    display: inline-block;
+    background-color: #ffffff;
+    width: 49%;
+    height: 48%;
+    margin: 1px;
+    margin-top: 6px;
+    background-image: url(pic/content1.jpg);
+    background-size: cover;
+}
+.produce2{
+    position:relative;
+    display: inline-block;
+    background-color: #443636;
+    width: 49%;
+    height: 48%;
+    margin: 1px;
+    margin-top: 6px;
+    background-image: url(pic/content2.jpg);
+}
+.produce3{
+    position:relative;
+    display: inline-block;
+    background-color: #649457;
+    width: 49%;
+    height: 48%;
+    margin: 1px;
+    background-image: url(pic/content3.jpg);
+    background-size: cover;
+}
+.produce4{
+    position:relative;
+    display: inline-block;
+    background-color: #649457;
+    width: 49%;
+    height: 48%;
+    margin: 1px;
+    background-image: url(pic/cotnent4.jpg);
+    background-position: center
+    
+    
+}
+
+
+
+
+/* FOOTER---------------------------------------------- */
+footer{
+position: relative;
+bottom: 0;
+height: 200px;
+width: 90%;
+background-color: black;
+
+}
+.footlist{
+    position: relative;
+    display: block;
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #649457;
+    margin-top: 5%;
+
+}
+
+footer h2{
+    position: relative;
+    color: #ffffff;
+    text-align: center;
+    top: 30%;
+    display: block;
+    font-size: 30px;
+}
+footer ul{
+    color: #ffffff;
+    list-style: none;
+    
+    
+    
+    
+    
+    
+    
+}
+footer li{
+    color: #eee;
+    float: left;
+    padding: 5px;
+    
+    
+    
+}
+
+
+
+/* fadein animation------------------------------------- */
+.human1.fadein {
+    opacity : 0;
+    transform : translate(-100px,0);
+    transition : all 1s;
+}
+.human2.fadein {
+    opacity : 0;
+    transform : translate(-100px,0);
+    transition : all 1s;
+    transition-delay: 0.5s;
+}
+.human3.fadein {
+    opacity : 0;
+    transform : translate(-100px,0);
+    transition : all 1s;
+    transition-delay: 1s;
+}
+
+.produce1.fadein {
+    opacity : 0;
+    transform : translate(100px,100px);
+    transition : all 1s;
+}
+.produce2.fadein {
+    opacity : 0;
+    transform : translate(-100px,100px);
+    transition : all 1s;
+    transition-delay: 0.5s;
+}
+.produce3.fadein {
+    opacity : 0;
+    transform : translate(100px,-100px);
+    transition : all 1s;
+    transition-delay: 1s;
+}
+.produce4.fadein {
+    opacity : 0;
+    transform : translate(-100px,-100px);
+    transition : all 1s;
+    transition-delay: 1.5s;
+}
+
+
+   
+.fadein.active{
+    opacity : 1;
+    transform : translate(0, 0);
+}
+
+
+/* @media screen and (max-width:990px) ------------------------*/
+@media screen and (max-width:990px){
+    .sidemenu{
+        background-color: rgb(8, 8, 8);
+        position: fixed;
+        width: 100%;
+        height: 100px;
+        right: 0;
+        
+        z-index: 50;
+        border-left: 1px solid #ffffff;
+    }
+    .menu-btn {
+        position: fixed;
+        top: 5%;
+        right: 5%;
+        display: flex;
+        height: 60px;
+        width: 60px;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        background-color: #000000;
+        border: 1px solid white;
+        border-radius: 5em;
+    
+    }
+    .menu-btn span,
+    .menu-btn span:before,
+    .menu-btn span:after {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 25px;
+        border-radius: 3px;
+        background-color: #ffffff;
+        position: absolute;
+        transition-duration:1s;
+    }
+    .menu-btn span:before {
+        bottom: 8px;
+        transition-duration:0.5s;
+    }
+    .menu-btn span:after {
+        top: 8px;
+        transition-duration:0.5s;
+    }
+    
+    #menu-btn-check:checked ~ .menu-btn span {
+        background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+        transition-duration:0.5s;
+    }
+    #menu-btn-check:checked ~ .menu-btn span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+        transition-duration:0.5s;
+    }
+    #menu-btn-check:checked ~ .menu-btn span::after {
+        top: 0;
+        transform: rotate(-45deg);
+        transition-duration:0.5s;
+    }
+    
+    #menu-btn-check {
+        display: none;
+    }
+    
+    .menu-content ul {
+        padding: 70px 10px 0;
+    }
+    .menu-content ul li {
+        border-bottom: solid 1px #ffffff;
+        list-style: none;
+    }
+    .menu-content ul li a {
+        display: block;
+        width: 100%;
+        font-size: 15px;
+        box-sizing: border-box;
+        color:#ffffff;
+        text-decoration: none;
+        padding: 9px 15px 10px 0;
+        position: relative;
+    }
+    .menu-content ul li a::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-top: solid 2px #ffffff;
+        border-right: solid 2px #ffffff;
+        transform: rotate(45deg);
+        position: absolute;
+        right: 11px;
+        top: 16px;
+    }
+    .menu-content {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 100%;/*leftの値を変更してメニューを画面外へ*/
+        z-index: 999;
+        background-color: #000000;
+        transition: all 0.5s;/*アニメーション設定*/
+        opacity: 70%;
+    }
+    
+    #menu-btn-check:checked ~ .menu-content {
+        left: 0;/*メニューを画面内へ*/
+    }
+    #menu-btn-check:checked ~ .menu-content {
+        left: 0;/*メニューを画面内へ*/
+    }
+    .man  {
+        position: relative;
+        z-index: 29;
+        left: 0;
+        
+        
+    }
+    .tabako1 {
+        width: 37%;
+        height: 45%;
+        opacity: 1;
+    
+    }
+    .maincontent{
+        width: 100%;
+        height: 2700px;
+    }
+    .intoroduce1{
+        width: 150%;
+        height: 150%;
+    }
+   
+    .content2{
+        background-color: rgba(235, 235, 235, 0.952);
+        height: 600px;
+        width: 100%;
+        position: relative;
+        z-index:10;
+    }
+    
+    .picture{
+        position:absolute;
+        
+        width: 97%;
+        height: 50%;
+        bottom: 0;
+        
+        
+        
+    }
+    .intoroduce1{
+        background-color: aliceblue;
+        display: inline-block;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        transition: 1s;
+        z-index: 30;
+        background-image: url(pic/about1.jpg);
+        background-size: cover;
+        box-shadow:2px 2px 4px -2px gray inset;
+        filter:grayscale(0%);
+    }
+    .intoroduce2{
+        background-color: rgb(21, 22, 22);
+        display: inline-block;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: -10px;
+        left: -80px;
+        transition: 1s;
+        background-image: url(pic/about2.jpg);
+        filter:grayscale(100%);
+        box-shadow: 2px 2px 4px -2px gray inset;
+        
+    }
+    
+    .box:hover .intoroduce2{
+        z-index: 32;
+        top:0;
+        left: 0;
+        transition: 1s;
+        transform: translate3d(10px, 10px, 0);
+        filter:grayscale(0%);
+    }
+    
+    .box:hover .intoroduce1{
+        
+        top: -10px;
+        left: -80px;
+        transition: 1s;
+        transform: translate3d(10px, 10px, 0);
+        filter:grayscale(100%);
+    }
+    
+    .about{
+        position: absolute;
+        
+        top: 0;
+        display: inline-block;
+    }
+    .arrow1{
+        left: 50%;
+        top: 40%;
+    }
+
+    .content2 .arrow1{
+        top: 50%;
+    }
+    
+    .intoroduce1{
+        left: -55%;
+        height: 129%;
+        margin: 2px;
+
+    }
+    .intoroduce2{
+        left: 45%;
+        height: 129%;
+        margin: 2px;
+        background-size: cover;
+        top: 0;
+        margin-left: 2px;
+
+        
+    }
+
+    .produce1{
+        width: 48%;
+    }
+    .produce3{
+        width: 48%;
+    }
+
+    .about {
+        position: absolute;
+        top: 0;
+        left: 10%;}
+
+    footer{
+        width: 100%;
+    }   
+
+
+    
+    
+    
+ 
+
+}
+
+
