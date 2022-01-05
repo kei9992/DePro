@@ -63,7 +63,7 @@ body{
     background-color: rgb(8, 8, 8);
     position: fixed;
     width: 10%;
-    height: 600px;
+    height: 100%;
     right: 0;
     display: flex;
     z-index: 50;
@@ -175,7 +175,7 @@ body{
 
 /* CONTENT--------------------------------------------- */
 .maincontent{
-    background-color: bisque;
+    
     position: relative;
     width: 90%;
     height: 2600px;
@@ -183,7 +183,7 @@ body{
 
 .content1-1{
     background-color: rgb(0, 0, 0); 
-    height: 600px;
+    height: 100%;
     width: 100%;
     position: fixed;
     top: 0%;
